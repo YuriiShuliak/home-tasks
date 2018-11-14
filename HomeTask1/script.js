@@ -1,14 +1,14 @@
 var image, price;
-var color = prompt('Введите цвет из предложенных (Серебрянный, Черный, Золотой)');
+var color = prompt('Введите цвет из предложенных (Silver, Black, Gold)');
 if (color === null) {
 	document.write('<h3>До свидания!</h3>');
 } else {
 	color = color.toLowerCase(); 
-	if (color === 'серебрянный') {
+	if (color === 'silver') {
 		image = 'img/silver.png';
-	} else if (color === 'черный') {
+	} else if (color === 'black') {
 		image = 'img/black.png';
-	} else if (color === 'золотой') {
+	} else if (color === 'gold') {
 		image = 'img/gold.png';
 	} else {
 		image = 'img/default.png';
@@ -19,11 +19,11 @@ if (color === null) {
 		document.write('<img src="' + image + '">');
 	} else {
 		if (+memory === 64) {
-			price = 32999;
+			price = 33000;
 		} else if (+memory === 256) {
-			price = 39999;
+			price = 40000;
 		} else if (+memory === 512) {
-			price = 49999;
+			price = 50000;
 		} 
 		document.write('<h3>Вот Ваш выбор</h3>');
 		document.write('<img src="' + image + '">');
