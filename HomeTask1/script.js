@@ -1,7 +1,7 @@
 var image, price;
 var color = prompt('Введите цвет из предложенных (Серебрянный, Черный, Золотой)');
 if (color === null) {
-	document.write('До свидания!');
+	document.write('<h3>До свидания!</h3>');
 } else {
 	color = color.toLowerCase(); 
 	if (color === 'серебрянный') {
@@ -15,8 +15,8 @@ if (color === null) {
 	}
 	var memory = prompt('Введите объем памяти в Гб (64, 256 или 512)');
 	if (memory === null) {
-		document.write('Вы выбрали только цвет');
-		document.write('<br><img src="' + image + '"><br>');
+		document.write('<h3>Вы выбрали только цвет</h3>');
+		document.write('<img src="' + image + '">');
 	} else {
 		if (+memory === 64) {
 			price = 32999;
@@ -25,13 +25,13 @@ if (color === null) {
 		} else if (+memory === 512) {
 			price = 49999;
 		} 
-		document.write('Вот Ваш выбор');
-		document.write('<br><img src="' + image + '"><br>');
+		document.write('<h3>Вот Ваш выбор</h3>');
+		document.write('<img src="' + image + '">');
 		if (!price) {
-			document.write('Такого объема памяти не существует');
+			document.write('<h3>Такого объема памяти не существует</h3>');
 		} else {
-			document.write('Объем памяти ' + memory + ' Гб<br>');
-			document.write('Цена ' + price + ' грн.');
+			document.write('<h3>Объем памяти ' + memory + ' Гб</h3>');
+			document.write('<h3>Цена ' + price + ' грн.</h3>');
 		}
 	}	
 }	
