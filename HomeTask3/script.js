@@ -57,7 +57,4 @@ function checkItem(message) {
 	}
 	return item;
 }
-function randomInteger() {
- console.log('sdfsfd');	
-}
 })();
