@@ -57,4 +57,7 @@ function checkItem(message) {
 	}
 	return item;
 }
+function randomInteger() {
+	
+}
 })();
