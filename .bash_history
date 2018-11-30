@@ -10,3 +10,9 @@ git add .
 git status
 git status
 git add .
+git status
+git add .
+git add .
+git status
+git commit -m "Buttons fixed"
+git push origin master

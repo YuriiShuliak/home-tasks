@@ -4,37 +4,37 @@ var compareObjects = function (o1, o2, key) {
 }
 
 // CONSTANTS
-var SIZE_SMALL = {
+const SIZE_SMALL = {
   name: 'small',
   price: 50,
   kk: 20
 };
-var SIZE_LARGE = {
+const SIZE_LARGE = {
   name: 'large',
   price: 100,
   kk: 40
 };
-var STUFFING_CHEESE = {
+const STUFFING_CHEESE = {
   name: 'cheese',
   price: 10,
   kk: 20
 };
-var STUFFING_POTATO = {
+const STUFFING_POTATO = {
   name: 'potato',
   price: 15,
   kk: 10
 };
-var STUFFING_SALAD = {
+const STUFFING_SALAD = {
   name: 'salad',
   price: 20,
   kk: 5
 };
-var TOPPING_SPICE = {
+const TOPPING_SPICE = {
   name: 'spice',
   price: 15,
   kk: 0
 };
-var TOPPING_MAYO = {
+const TOPPING_MAYO = {
   name: 'mayo',
   price: 20,
   kk: 5
@@ -77,22 +77,25 @@ Hamburger.prototype.removeTopping = function (newTopping) {
       return newTopping;
     }
   }
-  console.log('Такого топпинга вообще нет');
+  console.log('Такого топпинга нет');
   return false;
 }
 Hamburger.prototype.calculatePrice = function () {
-  var price = this._size.price + this._stuffing.price;
-  for (var i = 0; i < this._toppings.length; i++) {
+  let price = this._size.price + this._stuffing.price;
+  for (let i = 0; i < this._toppings.length; i++) {
     price += this._toppings[i].price;
   }
   return price;
 }
 Hamburger.prototype.calculateKk = function () {
-  var kk = this._size.kk + this._stuffing.kk;
-  for (var i = 0; i < this._toppings.length; i++) {
+  let kk = this._size.kk + this._stuffing.kk;
+  for (let i = 0; i < this._toppings.length; i++) {
     kk += this._toppings[i].kk;
   }
   return kk;
 }
 
-var burger1 = new Hamburger(SIZE_SMALL, STUFFING_POTATO);
+
+
+
+var burger1 = new Hamburger(SIZE_LARGE, STUFFING_CHEESE);
