@@ -16,3 +16,11 @@ git add .
 git status
 git commit -m "Buttons fixed"
 git push origin master
+git status
+git add .
+git status
+git commit -m "Create HomeTask7"
+git status
+git status
+git push origin master
+git status
