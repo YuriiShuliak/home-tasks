@@ -27,17 +27,16 @@ class NotesModel {
         cb(this._notes);
     }
 
-    removeNote(id, cb) {
+    removeNote(id, cb, cb1) {
         this._notes = this._notes.filter((e) => e.id !== +id);
-        cb(this._notes);
+        this.getNotes(cb);
+        this.getNotes(cb1);
     }
 
-    toggleFavorite(id, cb) {
-
-        let el = this._notes.find((e) => e.id === +id);
-        el.isFavorite === false ? el.isFavorite = true : el.isFavorite = false;
-
-
-        cb(this._notes);
+    toggleFavorite(id, cb, cb1) {
+        let favElement = this._notes.find((e) => e.id === +id);
+        favElement.isFavorite = favElement.isFavorite === false;
+        this.getNotes(cb);
+        this.getNotes(cb1);
     }
 }

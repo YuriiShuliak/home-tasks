@@ -7,5 +7,4 @@ class App {
         controller.init();
     }
 }
-
 let app = new App();
