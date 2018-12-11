@@ -51,6 +51,18 @@ var Hamburger = function (size, stuffing) {
 Hamburger.prototype.addTopping = function (newTopping) {
   this._toppings.push(newTopping);
 }
+Hamburger.prototype.setSize = function (size) {
+  this._size = size;
+}
+Hamburger.prototype.getPicture = function () {
+  return this._size.image;
+}
+Hamburger.prototype.setStuffing = function (stuffing) {
+  this._stuffing = stuffing;
+}
+Hamburger.prototype.clearToppings = function () {
+  this._toppings = [];
+}
 Hamburger.prototype.calculatePrice = function () {
   let price = this._size.price + this._stuffing.price;
   for (let i = 0; i < this._toppings.length; i++) {
@@ -65,6 +77,17 @@ Hamburger.prototype.calculateKk = function () {
   }
   return kk;
 }
+Hamburger.prototype.rebuildBurger = function () {
+  let burgerSize = SIZES.find((i) => i.name === size.value);
+  burger.setSize(burgerSize);
+  let burgerStuffing = STUFFINGS.find((i) => i.name === stuffing.value);
+  burger.setStuffing(burgerStuffing);
+  let burgerToppings = Array.prototype.filter.call(toppings, (i) => i.checked === true);
+  this.clearToppings();
+  burgerToppings.forEach((i) => {
+    TOPPINGS.forEach((j) => { if (j.name === i.value) burger.addTopping(j) });
+  });
+}
 
 let burger = new Hamburger(SIZES[0], STUFFINGS[0]);
 let size = document.querySelector('#size');
@@ -78,16 +101,9 @@ let chooseBox = document.querySelector('.choose-box');
 price.textContent = burger.calculatePrice();
 kk.textContent = burger.calculateKk();
 
-chooseBox.addEventListener('change', (e) => {
-  let burgerSize = SIZES.find((i) => i.name === size.value);
-  let burgerStuffing = STUFFINGS.find((i) => i.name === stuffing.value);
-  let burgerToppings = Array.prototype.filter.call(toppings, (i) => i.checked === true);
-
-  burger = new Hamburger(burgerSize, burgerStuffing);
-  burgerToppings.forEach((i) => {
-    TOPPINGS.forEach((j) => { if (j.name === i.value) burger.addTopping(j) });
-  });
+chooseBox.addEventListener('change', () => {
+  burger.rebuildBurger();
   price.textContent = burger.calculatePrice();
   kk.textContent = burger.calculateKk();
-  image.src = burgerSize.image;
+  image.src = burger.getPicture();
 });

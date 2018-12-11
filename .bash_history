@@ -24,3 +24,12 @@ git status
 git status
 git push origin master
 git status
+git status
+git add .
+git status
+git status
+git add .
+git status
+git commit -m "Creating HomeTask9"
+git status
+git push origin master
