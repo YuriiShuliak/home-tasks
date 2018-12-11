@@ -106,4 +106,8 @@ chooseBox.addEventListener('change', () => {
   price.textContent = burger.calculatePrice();
   kk.textContent = burger.calculateKk();
   image.src = burger.getPicture();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 1c4846250a63538d91c25f82c519bc5575487245

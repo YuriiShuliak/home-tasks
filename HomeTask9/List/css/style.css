@@ -1,0 +1,16 @@
+.fas {
+  color: gold;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+.ul-box {
+  float: left;
+}
+.ul-box:nth-child(2) {
+  margin-left: 50px;
+}
+h4 {
+  margin: 0;
+}

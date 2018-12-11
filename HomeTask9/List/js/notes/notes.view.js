@@ -13,7 +13,7 @@ class NotesView {
                 <li class="list__element">
                     {{text}}
                     <button data-id="{{id}}" class="list-element-btn">X</button>
-                    <i data-id="{{idF}}" class="far fa-star"></i>
+                    <i data-id="{{idFav}}" class="{{classFav}} fa-star"></i>
                 </li>
             `
         }
@@ -25,27 +25,26 @@ class NotesView {
             template += this._t.item
                 .replace('{{text}}', n.text)
                 .replace('{{id}}', n.id)
-                .replace('{{idF}}', n.id);
+                .replace('{{idFav}}', n.id);
+            template = this.toggleFavoritesClass(template, n);
         });
         this._s.list.innerHTML = template;
     }
 
     renderFavoritesNotes(notes) {
-
         let template = '';
-
-
         notes.filter(n => n.isFavorite === true).forEach(n => {
             template += this._t.item
                 .replace('{{text}}', n.text)
                 .replace('{{id}}', n.id)
-                .replace('{{idF}}', n.id);
+                .replace('{{idFav}}', n.id);
+            template = this.toggleFavoritesClass(template, n);
         });
         this._s.listFavorites.innerHTML = template;
     }
 
     listenRemovingNote(cb) {
-        this._s.list.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
             let target = e.target;
             if (target.classList.contains(this._s.removeBtnClass)) {
                 [].forEach.call(target.attributes, (i) => { if (i.name === 'data-id') cb(i.value) });
@@ -53,15 +52,16 @@ class NotesView {
         });
     }
 
-    listenToggleFavorite(cb) {
-        this._s.list.addEventListener('click', (e) => {
+    listenAddingFavorites(cb) {
+        document.addEventListener('click', (e) => {
             let target = e.target;
             if (target.classList.contains(this._s.favoritesClass)) {
-                if (!target.classList.replace("far", "fas")) target.classList.replace("fas", "far");
                 [].forEach.call(target.attributes, (i) => { if (i.name === 'data-id') cb(i.value) });
             }
         })
     }
 
-
+    toggleFavoritesClass(string, obj) {
+        return obj.isFavorite ? string.replace('{{classFav}}', 'fas') : string.replace('{{classFav}}', 'far');
+    }
 }

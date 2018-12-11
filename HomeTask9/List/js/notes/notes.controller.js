@@ -15,10 +15,14 @@ class NotesController {
         this._view.listenRemovingNote((id) => {
             this._model.removeNote(id, (notes) => {
                 this._view.renderNotes(notes);
+            }, (notes) => {
+                this._view.renderFavoritesNotes(notes);
             })
         });
-        this._view.listenToggleFavorite((id) => {
+        this._view.listenAddingFavorites((id) => {
             this._model.toggleFavorite(id, (notes) => {
+                this._view.renderNotes(notes);
+            }, (notes) => {
                 this._view.renderFavoritesNotes(notes);
             })
         });

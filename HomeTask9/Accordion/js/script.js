@@ -1,0 +1,1 @@
+$('.card-header').click(function () { $(this).next().toggle(300); });
