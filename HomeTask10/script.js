@@ -15,13 +15,17 @@ const IMAGES = [
     text: 'Golden phone description'
   },
 ];
-
+let current = $('.silver')[0];
 
 $('.color').on('click', function () {
+  if (current === this) return;
   $('.color').each(function (i, elem) {
     $(elem).removeClass('active');
-  })
+  });
   $(this).addClass('active');
+  $('.text').hide();
+  $('.more').text('More');
+  current = this;
   let picture = IMAGES.find(e => $(this).hasClass(e.color));
   $('.image').attr('src', picture.src);
   $('.text').html(picture.text);
