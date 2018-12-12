@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+.active {
+  border: 3px solid red;
+}
+.color {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.black {
+  background-color: black;
+}
+.silver {
+  background-color: silver;
+}
+.gold {
+  background-color: gold;
+}
+.img-container {
+  float: left;
+}
+.colors {
+  float: left;
+}
+.text {
+  float: left;
+  border: 1px solid black;
+  width: 100%;
+}
