@@ -1,0 +1,17 @@
+button {
+	width: 30px;
+	height: 30px;
+	margin-top: -1px;
+	padding-left: 4px;
+	padding-bottom: 3px;
+	font-size: 24px;
+}
+.closed {
+	background-color: #c1c1c1;
+}
+.lose {
+  background-color: #da2626;
+}
+.win {
+	background-color: #2de72d;
+}

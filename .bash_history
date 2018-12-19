@@ -47,3 +47,9 @@ git commit -m "Changing Hamburger"
 git status
 git pull
 git status
+git status
+git add .
+git status
+git commit -m "Changing HomeTask10"
+git status
+git push origin master
