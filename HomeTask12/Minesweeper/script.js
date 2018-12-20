@@ -1,5 +1,5 @@
-let items = 12;
-let minesQuantity = 10;
+let items = 15;
+let minesQuantity = 20;
 let buttons = [];
 let mines = new Array(items);
 for (let i = 0; i < mines.length; i++) {
@@ -41,8 +41,8 @@ document.addEventListener('click', function (e) {
 		alert('You lose');
 		window.location.reload();
 	} else {
-		buttons[i][j].textContent = value;
-		buttons[i][j].removeAttribute('class');
+		e.target.textContent = value;
+		e.target.removeAttribute('class');
 		openNeighboringItems(i, j);
 	}
 	if (isWon()) {
@@ -54,13 +54,10 @@ document.addEventListener('click', function (e) {
 document.addEventListener('contextmenu', function (e) {
 	if (e.target.nodeName !== 'BUTTON') return;
 	e.preventDefault();
-	let i = +e.target.getAttribute('data-i');
-	let j = +e.target.getAttribute('data-j');
-	let value = e.target.getAttribute('data-value');
-	if (!buttons[i][j].textContent) {
-		buttons[i][j].textContent = '*';
-	} else if (buttons[i][j].textContent === '*') {
-		buttons[i][j].textContent = '';
+	if (!e.target.textContent && e.target.hasAttribute('class')) {
+		e.target.textContent = '*';
+	} else if (e.target.textContent === '*' && e.target.hasAttribute('class')) {
+		e.target.textContent = '';
 	}
 });
 

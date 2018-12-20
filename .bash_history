@@ -53,3 +53,7 @@ git status
 git commit -m "Changing HomeTask10"
 git status
 git push origin master
+git status
+git commit -m "Minesweeper added"
+git status
+git push origin master
