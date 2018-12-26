@@ -1,19 +1,40 @@
 app-inputs {
   height: 50%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid black;
+  align-items: center;
 }
 app-stats {
   height: 50%;
   display: block;
+  border: 1px solid black;
 }
 .controls {
-  background-color: green;
   height: 400px;
   width: 400px;
 }
 .list {
-  background-color: red;
   height: 400px;
   width: 600px;
+  display: flex;
+  flex-direction: column;
 }
+ul {
+  list-style-type: none;
+  padding: 10px 40px;
+  margin: 0;
+}
+li {
+  margin: 10px 0;
+}
+.title {
+  display: flex;
+  justify-content: space-around;
+}
+.outgo {
+  text-align: end;
+}
+
 
