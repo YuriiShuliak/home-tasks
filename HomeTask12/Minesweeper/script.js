@@ -1,5 +1,5 @@
 let items = 15;
-let minesQuantity = 20;
+let minesQuantity = 40;
 let buttons = [];
 let mines = new Array(items);
 for (let i = 0; i < mines.length; i++) {
