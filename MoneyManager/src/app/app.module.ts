@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MoneyManagerModule } from './money-manager/money-manager.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent

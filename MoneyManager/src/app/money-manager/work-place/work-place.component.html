@@ -1,5 +1,6 @@
 <div class="controls">
-  <app-inputs></app-inputs>
+  <app-inputs [operations]="operations"
+              [categories]="categories"></app-inputs>
   <app-stats></app-stats>
 </div>
 <div class="list">
@@ -8,8 +9,8 @@
     <h2>-</h2>
   </div>
   <ul>
-    <li>Зарплата</li>
-    <li class="outgo">Покупки в супермаркете</li>
-    <li class="outgo">Покупка одежды</li>
+    <li *ngFor="let o of operations"
+        [ngClass]="{consumption: o.type === 'consumption'}">{{getCategory(o.catId).name}} -
+      {{o.sum}}$</li>
   </ul>
 </div>

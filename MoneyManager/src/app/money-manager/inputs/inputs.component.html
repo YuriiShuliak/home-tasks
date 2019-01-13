@@ -1,7 +1,28 @@
 <div>
-  <button>+</button>
-  <button>-</button>
+  <mat-button-toggle-group>
+    <mat-button-toggle checked
+                       (click)="toggleType()">+</mat-button-toggle>
+    <mat-button-toggle (click)="toggleType()">-</mat-button-toggle>
+  </mat-button-toggle-group>
 </div>
-<input type="text">
-<input type="text">
-<button>Add</button>
+<mat-form-field>
+  <mat-select placeholder="Choose category"
+              [(ngModel)]="operation.catId">
+    <mat-option value="{{c.id}}"
+                *ngFor="let c of categories">{{c.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <input matInput
+         type="number"
+         [(ngModel)]="operation.sum">
+</mat-form-field>
+<mat-form-field>
+  <textarea matInput
+            cols="40"
+            rows="3"
+            placeholder="Description"
+            [(ngModel)]="operation.descr"></textarea>
+</mat-form-field>
+<button mat-stroked-button
+        (click)="addOperation()">Add</button>
