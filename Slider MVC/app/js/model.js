@@ -1,6 +1,6 @@
 export class SliderModel {
     constructor() {
-        this._images = ['1.png', '2.png', '3.png', '4.png', '5.png'];
+        this._images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'];
         this._currentImg = 0;
         this._interval = 2000;
         this._intervalId = null;
